@@ -122,7 +122,7 @@ class carrera(materia):
     def agregar_materia(self,materia):
         #self.set_materias(materia)
         pass
-
+    
     def eliminar_materia(self):
         pass
 
