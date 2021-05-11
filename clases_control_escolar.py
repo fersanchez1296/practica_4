@@ -1,5 +1,14 @@
-class alumno1:
+from colorama import init, Fore, Back, Style #libreria necesaria para cambiar los colores de consola
+init(autoreset=True) #inicializador de la clase colorama
 
+
+class alumno1:
+    """
+    Contiene los atributos particulares
+    de un alumno
+    Mediante metodos get() y set(), obetenemos
+    y asignamos valores las variables miembro de la clase
+    """
     def __init__(self):
         self.__matricula = 0
         self.__nombre = ""
@@ -61,7 +70,14 @@ class alumno1:
 
 
 class profesor:
-    
+    """
+    Contiene los atributos particulares
+    de un profesor
+    Mediante metodos get() y set(), obetenemos
+    y asignamos valores las variables miembro de la clase
+    """
+
+
     def __init__(self):
         self.__no_empleado = 0
         self.__nombre = ""
@@ -92,7 +108,13 @@ class profesor:
 #***********************************************************************************************************
 
 class materia(profesor):
-
+    """
+    Contiene los atributos particulares
+    de una materis.
+    Esta clase hereda los atributos de la clase profesor().
+    Mediante metodos get() y set(), obetenemos
+    y asignamos valores las variables miembro de la clase
+    """
     def __init__(self):
         profesor.__init__(self)
         self.__nombre = ""
@@ -121,13 +143,20 @@ class materia(profesor):
         return self.__titular
 
     def __str__ (self):
-        return "Nombre materia->" + self.get_nombre_mat() 
+        return Fore.BLUE+"Nombre materia->" + self.get_nombre_mat() 
 
 
 #************************************************************************************************************
 
 class carrera(materia):
-
+    """
+    Contiene los atributos particulares
+    de una carrera.
+    Esta carrera hereda de la clase materia, la cual a su vez hereda
+    de la profesor.
+    Mediante metodos get() y set(), obetenemos
+    y asignamos valores las variables miembro de la clase
+    """
     def __init__(self):
         materia.__init__(self)
         profesor.__init__(self)
@@ -163,5 +192,5 @@ class carrera(materia):
         return self.__alumnos
 
     def __str__(self):
-        return "Nombre carrera-> " + self.get_nombre()
+        return Fore.MAGENTA+"Nombre carrera-> " + self.get_nombre()
 
